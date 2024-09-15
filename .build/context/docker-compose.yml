@@ -1,0 +1,12 @@
+services:
+  service_name:
+    build:
+      context: ./${TOOLS_INSPECTOR}/.build
+      dockerfile: Dockerfile
+    image: ${TOOLS_INSPECTOR}_image
+    volumes:
+      - ./${TOOLS_INSPECTOR}:${CONTAINER_VOLUME}
+    working_dir: ${CONTAINER_VOLUME}
+    # command: ["bash", "run.sh"]
+    stdin_open: true
+    tty: true
